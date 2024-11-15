@@ -1,0 +1,22 @@
+main {
+  width: fit-content;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+ol {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+output {
+  min-width: 3ch;
+}
