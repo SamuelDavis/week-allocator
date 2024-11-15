@@ -28,7 +28,7 @@ export default function App() {
     setItems((items) => [...items, { name, value: 0 }]);
   }
 
-  function onInput(i: number, event: { target: HTMLInputElement }) {
+  function onSetValue(i: number, event: { target: HTMLInputElement }) {
     setItems((items) => {
       const available = items.reduce(
         (available, item, j) => (j === i ? available : available - item.value),
@@ -61,14 +61,21 @@ export default function App() {
                 &minus;
               </button>
               <input
-                onInput={[onInput, index]}
+                onInput={[onSetValue, index]}
                 type="range"
                 min={0}
                 max={totalTime}
                 step={1}
                 value={getItem().value}
               />
-              <output>{getItem().value}</output>
+              <input
+                onChange={[onSetValue, index]}
+                type="number"
+                min={0}
+                max={totalTime}
+                step={1}
+                value={getItem().value}
+              />
               <span>{getItem().name}</span>
             </li>
           )}

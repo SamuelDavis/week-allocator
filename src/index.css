@@ -5,6 +5,7 @@ main {
 header {
   display: flex;
   justify-content: space-between;
+  gap: 1em;
 }
 
 ol {
@@ -19,4 +20,9 @@ li {
 
 output {
   min-width: 3ch;
+  text-align: right;
+}
+
+input[type="number"] {
+  text-align: right;
 }
